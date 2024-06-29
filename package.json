@@ -1,0 +1,37 @@
+{
+  "name": "powiler",
+  "displayName": "Powiler",
+  "description": "An extension that tracks, visualize, optimize and annotate functions with their energy consumption.",
+  "version": "0.0.1",
+  "publisher": "uditya-raj",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:powiler.annotate"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "powiler.annotate",
+      "title": "Annotate functions with energy consumption"
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.54.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
