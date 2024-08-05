@@ -51,9 +51,9 @@ Settings: Configure Powiler settings by going to File > Preferences > Settings (
 
 For any questions or support:
 
-**Publisher**: uditya-raj
-**Author**: Uditya Raj
-**GitHub Repository**:
-**Email**: udityaraj.18024@gmail.com
+- **Publisher**: uditya-raj
+- **Author**: Uditya Raj
+- **GitHub Repository**: https://github.com/UdityaRaj11/uditya-powiler
+- **Email**: udityaraj.18024@gmail.com
 
 Thank you for using Powiler! We hope it enhances your development experience by providing valuable insights into energy consumption and optimization opportunities.
