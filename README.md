@@ -1,65 +1,59 @@
-# uditya-powiler README
+# Powiler
 
-This is the README for your extension "uditya-powiler". After writing up a brief description, we recommend including the following sections.
+**Powiler** is a Visual Studio Code extension designed to help you track, visualize, optimize, and annotate functions with their energy consumption. Enhance your development workflow by integrating energy consumption analysis directly into your code editor.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- **Annotate Functions**: Automatically add annotations to your functions indicating their energy consumption.
+- **Optimize Functions**: Receive recommendations for optimizing your functions based on their energy usage.
+- **Visualize Data**: Gain insights into your code’s energy consumption patterns with visual representations.
 
-For example if there is an image subfolder under your extension project workspace:
+## Commands
 
-\!\[feature X\]\(images/feature-x.png\)
+- **`powiler.annotate`**: Annotates functions with energy consumption data.
+- **`powiler.optimize`**: Provides optimization suggestions for functions based on their energy consumption.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Installation
 
-## Requirements
+1. **Open Visual Studio Code**.
+2. **Go to the Extensions View**: Click on the Extensions icon in the Activity Bar on the side of the window or press `Ctrl+Shift+X`.
+3. **Search for `Powiler`**: In the search bar, type `Powiler` and select it from the list.
+4. **Install**: Click the `Install` button.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Alternatively, you can install the extension from the `.vsix` file:
 
-## Extension Settings
+1. **Package Your Extension**: Ensure you have `vsce` installed and package your extension:
+   `sh vsce package `
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+This will create a .vsix file in your project directory.
 
-For example:
+2. **Install the .vsix File**: Open VS Code and go to the Extensions view.
+   Click on the three-dot menu (ellipsis) in the upper-right corner of the Extensions view.
+   Select Install from VSIX....
+   Browse to the .vsix file and select it.
 
-This extension contributes the following settings:
+## Usage
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+### Activate Commands:
 
-## Known Issues
+1. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).
+2. **Run Powiler**: Annotate to add annotations to your functions based on their energy consumption.
+3. **Run Powiler**: Optimize to receive suggestions for optimizing your functions based on their energy usage.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## View Annotations and Suggestions:
 
-## Release Notes
+Annotations will appear inline within your code editor.
+Optimization suggestions will be provided through notifications or directly in the editor.
+Configuration
+Settings: Configure Powiler settings by going to File > Preferences > Settings (or Code > Preferences > Settings on macOS) and searching for Powiler.
 
-Users appreciate release notes as you update your extension.
+## Contact
 
-### 1.0.0
+For any questions or support:
 
-Initial release of ...
+**Publisher**: uditya-raj
+**Author**: Uditya Raj
+**GitHub Repository**:
+**Email**: udityaraj.18024@gmail.com
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Thank you for using Powiler! We hope it enhances your development experience by providing valuable insights into energy consumption and optimization opportunities.

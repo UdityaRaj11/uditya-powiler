@@ -16,6 +16,11 @@ async function annotate(context, model) {
     }, async (progress) => {
         progress.report({message: "Loading code..."});
         const document = editor.document;
+        const lang = document.languageId;
+        if (lang !== 'python' && lang !== 'javascript') {
+            vscode.window.showInformationMessage('Free access includes support for Python and JavaScript. Unlock support for more languages with our paid version.');
+            return;
+        }
         const code = document.getText();
         const prompt = "Convert this to python code and return only the code. Code: " + code;
         const result = await model.generateContent(prompt);
