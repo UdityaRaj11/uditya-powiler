@@ -34,6 +34,15 @@ This will create a .vsix file in your project directory.
 
 ## Usage
 
+### Configure API Key:
+
+To use the Powiler extension, you need to configure your API key. Follow these steps:
+
+1. **Open the Command Palette**: Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on macOS).
+2. **Enter Google API Key**: If prompted for your API key, enter it in the input box.
+3. If the extension does not prompt you, go to File > Preferences > Settings (or Code > Preferences > Settings on macOS) and search for Powiler.
+4. **Enter your API key in the Powiler**: API Key setting.
+
 ### Activate Commands:
 
 1. Open the Command Palette (Ctrl+Shift+P or Cmd+Shift+P on macOS).

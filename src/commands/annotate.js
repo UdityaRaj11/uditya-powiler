@@ -14,15 +14,24 @@ async function annotate(context, model) {
         title: "Powiler",
         cancellable: false
     }, async (progress) => {
-        progress.report({message: "Loading code..."});
         const document = editor.document;
         const lang = document.languageId;
         if (lang !== 'python' && lang !== 'javascript') {
             vscode.window.showInformationMessage('Free access includes support for Python and JavaScript. Unlock support for more languages with our paid version.');
             return;
         }
+        progress.report({message: "Loading code..."});
         const code = document.getText();
         const prompt = "Convert this to python code and return only the code. Code: " + code;
+        try {
+            
+            await model.generateContent(prompt);
+        }
+        catch (error) {
+            vscode.window.showErrorMessage('An error occurred while processing the code. Please try again.');
+            vscode.window.showErrorMessage(error.message);
+            return;
+        }
         const result = await model.generateContent(prompt);
         const codeInPython = result.response.text();
         const PythonCode = extractPythonCode(codeInPython);

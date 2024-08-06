@@ -16,6 +16,17 @@
   ],
   "main": "./src/extension.js",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Powiler Configuration",
+      "properties": {
+        "powiler.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Enter your Gemini API key"
+        }
+      }
+    },
     "commands": [
       {
         "command": "powiler.annotate",

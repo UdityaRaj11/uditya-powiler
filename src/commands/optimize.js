@@ -13,15 +13,23 @@ async function optimize(context, model) {
         title: "Powiler",
         cancellable: false
     }, async (progress) => {
-        progress.report({message: "Loading code..."});
         const document = editor.document;
         const lang = document.languageId;
         if (lang !== 'python' && lang !== 'javascript') {
             vscode.window.showInformationMessage('Free access includes support for Python and JavaScript. Unlock support for more languages with our paid version.');
             return;
         }
+        progress.report({message: "Loading code..."});
         const code = document.getText();
         const prompt = "Optimize this code focusing on lower energy consumption and provide suggestions, making it Energy Efficient, Identifying objective and variables, Optimizing algorithm architecture and Assessing data outlier probabilities. Code: " + code;
+        try {
+            await model.generateContent(prompt);
+        }
+        catch (error) {
+            vscode.window.showErrorMessage('An error occurred while processing the code. Please try again.');
+            vscode.window.showErrorMessage(error.message);
+            return;
+        }
         const result = await model.generateContent(prompt);
         const panel = vscode.window.createWebviewPanel(
             'optimizationIdeas',
