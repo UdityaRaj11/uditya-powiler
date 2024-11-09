@@ -49,15 +49,16 @@ This extension requires the following Python libraries:
 
 The extension will attempt to install dependencies automatically. However, if you encounter issues, you can manually install the dependencies by adding the following code to your extension setup:
 
-`import subprocess`
-`import sys`
+```python
+import subprocess
+import sys
 
-`def install_dependencies():`
-`  try:`
-`     import pandas`
-`     import eco2ai`
-`  except ImportError:`
-`     subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "eco2ai"])`
+def install_dependencies():
+    try:
+        import pandas
+        import eco2ai
+    except ImportError:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "eco2ai"])
 
 Adding this function ensures that pandas and eco2ai are installed when the extension is activated.
 
@@ -95,3 +96,4 @@ For any questions or support:
 - **Email**: udityaraj.18024@gmail.com
 
 Thank you for using Powiler! We hope it enhances your development experience by providing valuable insights into energy consumption and optimization opportunities.
+```
