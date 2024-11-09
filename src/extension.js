@@ -1,5 +1,7 @@
 const vscode = require('vscode');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const path = require('path');
+const { exec } = require('child_process');
 
 const annotate = require('./commands/annotate');
 const optimize = require('./commands/optimize');
@@ -7,6 +9,16 @@ const optimize = require('./commands/optimize');
 global.filepath = "";
 
 async function activate(context) {
+    const setupScriptPath = path.join(__dirname, 'src', 'setup', 'setup_script.py');
+    const command = `python "${setupScriptPath}"`;
+    // Run the setup script to ensure dependencies are installed
+    exec(command, (err, stdout, stderr) => {
+        if (err) {
+            console.error(`Error installing packages: ${stderr}`);
+            return;
+        }
+        console.log(`Packages installed successfully: ${stdout}`);
+    });
     global.filepath = context.extensionPath;
     const config = vscode.workspace.getConfiguration('powiler');
     let apiKey = config.get('apiKey');

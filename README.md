@@ -2,6 +2,8 @@
 
 **Powiler** is a Visual Studio Code extension designed to help you track, visualize, optimize, and annotate functions with their energy consumption. Enhance your development workflow by integrating energy consumption analysis directly into your code editor.
 
+- **Note: Python is required for this extension to function properly.**
+
 ## Features
 
 - **Annotate Functions**: Automatically add annotations to your functions indicating their energy consumption.
@@ -31,6 +33,33 @@ This will create a .vsix file in your project directory.
    Click on the three-dot menu (ellipsis) in the upper-right corner of the Extensions view.
    Select Install from VSIX....
    Browse to the .vsix file and select it.
+
+## Dependency Management
+
+### Required Libraries
+
+This extension requires the following Python libraries:
+
+- pandas
+- os
+- eco2ai
+  These libraries will be automatically installed if they are not already available.
+
+### Ensuring Dependency Installation
+
+The extension will attempt to install dependencies automatically. However, if you encounter issues, you can manually install the dependencies by adding the following code to your extension setup:
+
+`import subprocess`
+`import sys`
+
+`def install_dependencies():`
+`  try:`
+`     import pandas`
+`     import eco2ai`
+`  except ImportError:`
+`     subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "eco2ai"])`
+
+Adding this function ensures that pandas and eco2ai are installed when the extension is activated.
 
 ## Usage
 

@@ -131,14 +131,15 @@ function annotateOriginalCode(originalCode, output) {
                 if (!isNaN(numericValue)) {
                     try {
                         const convertedValue = convertEnergyConsumption(numericValue, lang);
-                        annotatedCode += `${match[1]}// ENERGY CONSUMPTION: ${convertedValue.toFixed(5)} J\n`;
+                        const commentTag = (lang === 'python') ? '#' : '//';
+                        annotatedCode += `${match[1]}${commentTag} ENERGY CONSUMPTION: ${convertedValue.toFixed(5)} J\n`;
                     } catch (error) {
                         vscode.window.showErrorMessage(`Error converting energy consumption: ${error.message}`);
-                        annotatedCode += `${match[1]}// ENERGY CONSUMPTION: ${functionOutput}\n`;
+                        annotatedCode += `${match[1]}${lang === 'python' ? '#' : '//'} ENERGY CONSUMPTION: ${functionOutput}\n`;
                     }
                 } else {
                     vscode.window.showErrorMessage(`Failed to parse numeric value from: ${functionOutput}`);
-                    annotatedCode += `${match[1]}// ENERGY CONSUMPTION: ${functionOutput}\n`;
+                    annotatedCode += `${match[1]}${lang === 'python' ? '#' : '//'} ENERGY CONSUMPTION: ${functionOutput}\n`;
                 }
             }
             annotatedCode += originalCode.slice(match.index, functionRegex.lastIndex);
@@ -151,6 +152,7 @@ function annotateOriginalCode(originalCode, output) {
 
     return originalCode;
 }
+
 
 module.exports = {
     extractPythonCode,
