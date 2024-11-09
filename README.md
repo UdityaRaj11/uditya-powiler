@@ -59,9 +59,9 @@ def install_dependencies():
         import eco2ai
     except ImportError:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "eco2ai"])
+```
 
 Adding this function ensures that pandas and eco2ai are installed when the extension is activated.
-```
 
 ## Usage
 
