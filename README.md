@@ -61,6 +61,7 @@ def install_dependencies():
         subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "eco2ai"])
 
 Adding this function ensures that pandas and eco2ai are installed when the extension is activated.
+```
 
 ## Usage
 
@@ -96,4 +97,7 @@ For any questions or support:
 - **Email**: udityaraj.18024@gmail.com
 
 Thank you for using Powiler! We hope it enhances your development experience by providing valuable insights into energy consumption and optimization opportunities.
+
+```
+
 ```
